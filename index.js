@@ -13,6 +13,8 @@ app.use(
 
 app.get('/students', db.getStudents);
 
+app.post('/register', db.register);
+
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)
 })

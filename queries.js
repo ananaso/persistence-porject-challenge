@@ -18,4 +18,20 @@ const getStudents = (req, res) => {
   })
 }
 
-module.exports = {getStudents,}
+const register = (req, res) => {
+  const name = req.body.name;
+  if (name && name.length > 0) {
+    pool.query('INSERT INTO students (name) VALUES ($1)', [name], (error, results) => {
+      if (error) {
+        throw error;
+      }
+      console.log(results.insertId);
+      res.status(201).send(`Student registered with ID: ${results.insertId}`)
+    })
+  }
+}
+
+module.exports = {
+  getStudents,
+  register,
+}
