@@ -10,10 +10,25 @@ app.use(
     extended: true,
   })
 )
+app.get('/', (request, response) => {
+    response.json({ info: 'Node.js, Express, and Postgres API' })
+  })
 
-app.get('/students', db.getStudents);
+app.get('/students', (req, res) => {
+  if (req.query.search) {
+    db.getStudentsByName(req, res);
+  } else {
+    db.getStudents(req, res);
+  }
+});
+
+app.get('/students/:id', db.getStudentById);
 
 app.post('/register', db.register);
+
+app.post('/grades/:id', db.updateStudent);
+
+app.get('/grades/:id', db.getGradesById);
 
 app.listen(port, () => {
   console.log(`App running on port ${port}.`)
