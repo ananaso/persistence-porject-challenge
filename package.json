@@ -1,0 +1,25 @@
+{
+  "name": "persistence-porject-challenge",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "nodemon main"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/shortf15e/persistence-porject-challenge.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/shortf15e/persistence-porject-challenge/issues"
+  },
+  "homepage": "https://github.com/shortf15e/persistence-porject-challenge#readme",
+  "dependencies": {
+    "express": "^4.17.1",
+    "nodemon": "^2.0.6",
+    "pg": "^8.5.1"
+  }
+}
